@@ -2,22 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Image Search API</title>
+    <link rel="stylesheet" href="./css/loader.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+    <!-- Форма пошуку -->
+    <form class="form" id="search-form">
+      <label>
+        <input
+          type="text"
+          name="searchQuery"
+          placeholder="Search images..."
+          required
+        />
+      </label>
+      <button type="submit">Search</button>
+    </form>
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
+    <!-- Контейнер галереї -->
+    <ul class="gallery" id="gallery"></ul>
 
-    <load src="./partials/footer.html" />
+    <!-- Індикатор завантаження -->
+    <span class="loader is-hidden" id="loader"></span>
 
+    <!-- Кнопка завантаження наступної сторінки -->
+    <button type="button" class="load-more is-hidden" id="load-more">Load more</button>
+
+    <!-- Основний скрипт -->
     <script type="module" src="./main.js"></script>
   </body>
 </html>
